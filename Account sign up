@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Treeside Holidays</title>
+</head>
+
+<body>
+<h1>Personal Account Sign Up</h1>
+<p>Please enter your details. The website will automatically generate your username from your details.</p>  Please enter a password for your account.</p>
+
+
+<p>First name:	<input type="text" id="fname" /></p>
+<p>Surname:	<input type="text" id="sname" /></p>
+<p>Date of birth:	<input type="text" id="dob" /> (Please enter as dd/mm/yyyy)</p>
+<button onclick="user()">Generate Username</button>
+<p id="uname"> </p> <!-- Place where the username will appear which is under the Generate Username button-->
+
+
+<p>Please enter a password for your account.</p>
+<p>Enter password:	<input type="text" id="password1" /></p>
+<p>Re-enter password:	<input type="text" id="password2"/></p>
+<button onclick="password()">Submit Password</button>
+
+</p>
+
+
+</body>
+
+<script> <!-- adding script to add function --> 
+function user()<!-- creating the function for to generate username -->
+{
+<!-- declaring variable -->
+var s=sname.value;
+var f=fname.value;
+var d=dob.value;
+var y=d.substring(6,10); <!-- taking the variable d and using substring. By using substring you can take the year only. --> <!-- substring(startletter,endletter) -->
+
+document.getElementById("uname").innerHTML="The Username is " + f + s + y;<!-- so that the username will be generated under the "Generate Username" button -->
+}
+function password()<!-- creating function to show if password has been set -->
+{
+<!-- declaring variable -->
+var p1=password1.value;
+var p2=password2.value;
+
+if (p1==p2) 
+{location.replace("password.html"); <!-- location.replace is used so that the text in the document.write will be shown in another page -->
+document.write("Your Password has been set");
+}
+else
+{location.replace("password.html"); <!-- location.replace is used so that the text in the document.write will be shown in another page -->
+document.write("Your passwords did not match, please try again");
+}
+}
+</script>
+</html>

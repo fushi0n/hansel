@@ -13,6 +13,7 @@
 <p>Surname:	<input type="text" id="sname" /></p>
 <p>Date of birth:	<input type="text" id="dob" /> (Please enter as dd/mm/yyyy)</p>
 <button onclick="user()">Generate Username</button>
+<br>
 <p id="uname"> </p> <!-- Place where the username will appear which is under the Generate Username button-->
 
 
@@ -35,7 +36,13 @@ var f=fname.value;
 var d=dob.value;
 var y=d.substring(6,10); <!-- taking the variable d and using substring. By using substring you can take the year only. --> <!-- substring(startletter,endletter) -->
 
+if (d=="")
+{document.getElementById("uname").innerHTML="Please enter your date of birth";
+}
+else
+{
 document.getElementById("uname").innerHTML="The Username is " + f + s + y;<!-- so that the username will be generated under the "Generate Username" button -->
+}
 }
 function password()<!-- creating function to show if password has been set -->
 {
@@ -54,3 +61,4 @@ document.write("Your passwords did not match, please try again");
 }
 </script>
 </html>
+
